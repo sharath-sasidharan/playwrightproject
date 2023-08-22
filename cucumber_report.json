@@ -1,0 +1,303 @@
+[
+  {
+    "description": "    As a user\n    I want to login into application",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-validation-seerportal;login_01:-login-with-blank-email",
+        "keyword": "Scenario Outline",
+        "line": 6,
+        "name": "Login_01: Login with Blank Email",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 342000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I am on the login page",
+            "match": {
+              "location": "step-definitions\\login-step.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 782000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I login with Invalid Email ''",
+            "match": {
+              "location": "step-definitions\\login-step.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 158000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I can see validation error message for invalid username",
+            "match": {
+              "location": "step-definitions\\login-step.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1330000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 52000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-validation-seerportal;login_02:-login-with-invalid-email",
+        "keyword": "Scenario Outline",
+        "line": 15,
+        "name": "Login_02: Login with invalid Email",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 252000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 16,
+            "name": "I am on the login page",
+            "match": {
+              "location": "step-definitions\\login-step.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 748000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "I login with Invalid Email sanjay@dataseers",
+            "match": {
+              "location": "step-definitions\\login-step.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 191000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "I can see validation error message for invalid username",
+            "match": {
+              "location": "step-definitions\\login-step.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1361000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 45000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-validation-seerportal;login_03:-login-with-invalid-password",
+        "keyword": "Scenario Outline",
+        "line": 24,
+        "name": "Login_03: Login with invalid Password",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 235000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "I am on the login page",
+            "match": {
+              "location": "step-definitions\\login-step.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 938000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "I login with Invalid Email syadav@dataseers.in",
+            "match": {
+              "location": "step-definitions\\login-step.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 147000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "I login with Invalid Password abcdsd@123",
+            "match": {
+              "location": "step-definitions\\login-step.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 161000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "I can see validation error message for invalid UserName and Password",
+            "match": {
+              "location": "step-definitions\\login-step.js:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 34000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-validation-seerportal;login_04:-login-with-valid-email-and-password",
+        "keyword": "Scenario Outline",
+        "line": 35,
+        "name": "Login_04: Login with Valid Email and Password",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 282000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 36,
+            "name": "I am on the login page",
+            "match": {
+              "location": "step-definitions\\login-step.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 702000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 37,
+            "name": "I login with valid Email",
+            "match": {
+              "location": "step-definitions\\login-step.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 225000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 38,
+            "name": "I login with valid Password",
+            "match": {
+              "location": "step-definitions\\login-step.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 102000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 39,
+            "name": "I can see Home Page",
+            "match": {
+              "location": "step-definitions\\login-step.js:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 60050000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 38000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-validation-seerportal",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login Validation Seerportal",
+    "tags": [],
+    "uri": "features\\login.feature"
+  }
+]
