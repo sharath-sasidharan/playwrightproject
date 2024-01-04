@@ -5,7 +5,7 @@ const { LoginPage } = require('../page-objects/login-page')
 const loginPage = new LoginPage()
 
 defineStep(/^I am on the login page$/, async function () {
-   await loginPage.navigateToLoginScreen(process.env.SEERPORTAL228)
+   await loginPage.navigateToLoginScreen(process.env.SEERPORTAL230)
  })
 
 defineStep(/^I login with Invalid Email ([^"]*)$/, async function (email) {
@@ -24,11 +24,11 @@ defineStep(/^I login with Invalid Password ([^"]*)$/, async function (password) 
   await loginPage.submitPasswordForm(password)
 })
 
-defineStep(/^I login with valid Password$/, async function () {
-  await loginPage.submitValidPasswordForm(process.env.PASSWORD)
+defineStep(/^I login with valid Password$/, {timeout: 2 * 6000}, async function () {
+  await loginPage.submitValidPasswordForm()
 })
 
-defineStep(/^I can see Home Page$/, {timeout: 2 * 60000}, async function () {
+defineStep(/^I can see Home Page$/, {timeout: 2 * 6000}, async function () {
   await loginPage.homePage()
 })
 
@@ -36,8 +36,10 @@ defineStep(/^I can see validation error message for invalid UserName and Passwor
   await loginPage.invalidPasswordValidation()
 })
 
-// defineStep(
-//   /^I fill the login form with "([^"]*)" and "([^"]*)"$/,
-//   async function (username, password) {
-//     await loginPage.submitLoginWithParameters(username, password)
-//   })
+defineStep(/^I enter valid totp$/, async function () {
+  await loginPage.totp()
+})
+
+defineStep(/^I see client login page and click on Continue as Dataseers$/, async function () {
+  await loginPage.clientLoginPage()
+})

@@ -12,7 +12,7 @@ Feature: Seerportal Login Validation
            | TestID    | email |
            | Login_01  | ''    |
  
-     Scenario Outline:<TestID>: Login with invalid Email
+      Scenario Outline:<TestID>: Login with invalid Email
       Given I am on the login page
       When I login with Invalid Email <email>
       Then I can see validation error message for invalid username
@@ -31,11 +31,12 @@ Feature: Seerportal Login Validation
           | TestID   | email                  | password     |
           | Login_03 | syadav@dataseers.in    | abcdsd@123   |
 
-
     Scenario Outline:<TestID>: Login with Valid Email and Password
       Given I am on the login page
       When I login with valid Email
       Then I login with valid Password
+      Then I enter valid totp
+      Then I see client login page and click on Continue as Dataseers
       Then I can see Home Page 
 
     Examples:

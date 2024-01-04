@@ -1,7 +1,7 @@
 import { PlaywrightTestConfig } from '@playwright/test' 
 
 const config = {
-  timeout: 60000,
+  timeout: 5 * 60 * 1000,
   retries: 0,
   use: {
     headless: true,

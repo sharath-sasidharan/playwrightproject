@@ -1,9 +1,15 @@
 const { assert } = require('chai')
+const OTPAuth = require("otpauth");
+let totp = new OTPAuth.TOTP({
+  issuer: "SeerPortal",
+  secret: "MHXILU6HYBGAP2LTJBMRJUJLECYURDWB", // or 'OTPAuth.Secret.fromBase32("MHXILU6HYBGAP2LTJBMRJUJLECYURDWB")'
+});
 
+let token = totp.generate().toString();
 class LoginPage {
   
   async navigateToLoginScreen() {
-    await page.goto(process.env.SEERPORTAL228)
+    await page.goto(process.env.SEERPORTAL230)
   }
 
   async submitEmailForm(email) {
@@ -35,14 +41,23 @@ class LoginPage {
   async submitValidPasswordForm() {
     await page.fill('#password', process.env.PASSWORD)
     await page.click('(//button[@type="submit"])[1]')
+    await page.waitForTimeout(6000)
   }
 
   async homePage() {
-    await page.waitForTimeout(60000)
+    await page.waitForTimeout(6000)
     const xpathExpression = '//span[@title="Home Page"]'
     const extractedText = await page.$eval(xpathExpression, (element) => element.textContent)
-    //console.log('Extracted Text:', extractedText)
     assert.equal(extractedText, 'Home Page', 'Home Page Validation Passed')
+  }
+  
+  async totp() {
+     await page.fill('//input[@id="totp"]', token) 
+     await page.click('(//button[@type="submit"])[1]')
+  }
+
+  async clientLoginPage() {
+    await page.click('//div/button/span[normalize-space()="Continue as DataSeers."]')
   }
 }
 
