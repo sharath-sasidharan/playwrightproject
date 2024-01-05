@@ -1,7 +1,11 @@
+########################################
+# Feature: Seerportal Login Validation #
+# Author: Sanjay Kumar Yadav 
+#########################################
+
 Feature: Seerportal Login Validation 
 
-    As a user
-    I want to login into application
+    As a user I want to login into application
 
      Scenario Outline:<TestID>: Login with Blank Email
       Given I am on the login page

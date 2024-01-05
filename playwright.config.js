@@ -1,11 +1,16 @@
-import { PlaywrightTestConfig } from '@playwright/test' 
+import { PlaywrightTestConfig } from '@playwright/test'
 
-const config = {
+module.exports = config({
   timeout: 5 * 60 * 1000,
   retries: 0,
+  reporter: [
+    ['html'],
+    ['allure-playwright', { outputFolder: 'my-allure-results' }],
+  ],
   use: {
-    headless: true,
-    viewport: { width: 1280, height: 720 },
+    headless: false,
+    viewport: null, //viewport: { width: 1280, height: 720 },
+    launchOptions: { args: ['--start-maximized'] },
     actionTimeout: 15000,
     ignoreHTTPSErrors: true,
     video: 'retain-on-failure',
@@ -25,6 +30,4 @@ const config = {
       use: { browserName: 'webkit' },
     },
   ],
-}
-
-export default config
+})

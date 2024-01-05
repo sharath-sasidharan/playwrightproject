@@ -1,3 +1,4 @@
+/************************************* Hooks Declaration **************************************************/
 const playwright = require('playwright')
 const { Before, After, BeforeAll, AfterAll } = require('@cucumber/cucumber')
 

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "C://NewProject/playwrightproject/node_modules/.bin/cucumber-js --require cucumber.js --require step-definitions/**/*.js -f json:cucumber_report.json --publish-quiet",
+    "testEnv": "cucumber-js --require cucumber.js --require step-definitions/**/*.js -f json:cucumber_report.json --publish-quiet",
+    "devEnv": "cucumber-js --require cucumber.js --require step-definitions/**/*.js -f json:cucumber_report.json --publish-quiet",
     "report": "node reporter.js"
   },
   "keywords": [],
@@ -12,11 +13,16 @@
   "license": "ISC",
   "dependencies": {
     "@cucumber/cucumber": "^7.3.2",
+    "@web/test-runner-playwright": "^0.11.0",
+    "allure-playwright": "^2.10.0",
     "chai": "^4.3.7",
     "cucumber-html-reporter": "^5.5.1",
     "dotenv": "^16.3.1",
     "otpauth": "^9.2.1",
     "playwright": "^1.37.0",
     "prettier": "^2.5.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.1"
   }
 }
